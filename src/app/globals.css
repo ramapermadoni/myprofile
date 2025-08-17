@@ -241,3 +241,12 @@ html {
     border-radius: 0.5rem;
 }
 
+/* Timeline dot */
+.absolute.-left-2 {
+  left: -0.5rem;
+}
+
+/* Timeline line */
+.border-l-2 {
+  border-left-width: 2px;
+}

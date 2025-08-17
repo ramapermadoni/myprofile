@@ -15,6 +15,7 @@ export default function Navbar() {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' }
   ];
@@ -27,7 +28,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="#home" className="text-ubuntu-orange font-bold text-xl">
-            Rama.dev
+            Rama Permadoni
           </Link>
 
           {/* Desktop Navigation */}

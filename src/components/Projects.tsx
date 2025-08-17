@@ -5,25 +5,28 @@ import Image from "next/image";
 export default function Projects() {
   const projects = [
     {
-      image: "/assets/images/dummy-1.png",
-      alt: "modern web application dashboard interface, dark theme",
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with admin dashboard",
-      tags: ["Laravel", "MySQL", "Tailwind"],
+      image: "/assets/images/featured-projects/mitra-qurban.png",
+      alt: "DT Peduli Qurban mobile application interface",
+      title: "DT Peduli Qurban",
+      description: "Mobile application for Qurban (sacrifice) donation management with payment integration",
+      tags: ["Flutter", "REST API"],
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.dtpeduli.qurban&hl=id"
     },
     {
-      image: "/assets/images/dummy-2.png",
-      alt: "mobile app interface design, flutter app, dark theme",
-      title: "Task Management App",
-      description: "Cross-platform mobile app for productivity",
-      tags: ["Flutter", "GetX", "Firebase"],
+      image: "/assets/images/featured-projects/dtpeduli.png",
+      alt: "DT Peduli official mobile application interface",
+      title: "DT Peduli Official",
+      description: "Official charity and donation platform mobile application",
+      tags: ["Flutter", "Payment Gateway", "REST API"],
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.dtpeduli.official&hl=id"
     },
     {
-      image: "/assets/images/dummy-3.png",
-      alt: "api documentation interface, golang backend system",
-      title: "API Gateway Service",
-      description: "Microservices architecture with Go backend",
-      tags: ["Golang", "Docker", "PostgreSQL"],
+      image: "/assets/images/featured-projects/hrdt.png",
+      alt: "NXSYSPRO HRDT mobile application interface",
+      title: "NXSYSPRO HRDT",
+      description: "Human Resources mobile application for employee management",
+      tags: ["Flutter", "REST API", "CI4"],
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.nxsyspro.hrd&hl=id"
     }
   ];
 
@@ -52,9 +55,14 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <button className="bg-ubuntu-purple hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors">
-                  View Details
-                </button>
+                <a 
+                  href={project.playStoreUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block bg-ubuntu-purple hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                >
+                  View on Play Store
+                </a>
               </div>
             </div>
           ))}
