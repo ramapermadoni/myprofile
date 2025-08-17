@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="mb-4 md:mb-0">
             <p className="text-ubuntu-grey">© {new Date().getFullYear()} Rama Permadoni. All rights reserved.</p>
           </div>
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 w-full md:w-auto">
             {navItems.map((item, index) => (
               <a 
                 key={index}

@@ -85,7 +85,7 @@ export default function Experience() {
       institution: "Freelance",
       period: "Jan 2019 - Jan 2020",
       description: "Provided photography, video editing and digital design services for various clients.",
-      tags: ["Photoshop", "Premiere Pro", "Digital Photography"]
+      tags: ["Photoshop", "Sony Vegas Pro", "Corel Draw", "Digital Photography"]
     },
     {
       id: 6,
