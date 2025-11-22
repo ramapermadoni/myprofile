@@ -82,13 +82,32 @@ export default function Experience() {
     {
       id: 5,
       title: "Creative Designer",
-      institution: "Freelance",
+      institution: "DT Peduli",
       period: "Jan 2019 - Jan 2020",
-      description: "Provided photography, video editing and digital design services for various clients.",
+      description: "Provided photography, video editing and digital design services.",
       tags: ["Photoshop", "Sony Vegas Pro", "Corel Draw", "Digital Photography"]
     },
     {
       id: 6,
+      title: "Volunteer & Freelancer",
+      institution: "Daarut Tauhiid Foundation",
+      period: "May 2018 - Jan 2019",
+      description: "Served as a front office volunteer at Daarut Tauhiid Foundation, assisting with jamaah services, providing information, handling light administrative tasks, and ensuring a welcoming and organized environment for all visitors.",
+      tags: [
+        "Front Office",
+        "Customer Service",
+        "Jamaah Services",
+        "Administrative Support",
+        "Public Relations",
+        "Communication Skills",
+        "Hospitality",
+        "Community Support",
+        "Service Excellence",
+        "Office Administration"
+      ]
+    },
+    {
+      id: 7,
       title: "Web Developer",
       institution: "DIGITAL CABINET™",
       period: "Sep 2013 - May 2018",
