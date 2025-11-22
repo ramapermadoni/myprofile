@@ -71,7 +71,7 @@ export default function EntrepreneurialJourney() {
                 </div>
 
                 <blockquote className="text-lg text-gray-300 leading-relaxed border-l-4 border-ubuntu-orange pl-6 mb-6">
-                  "{product.summary}"
+                  &ldquo;{product.summary}&rdquo;
                 </blockquote>
               </div>
 
