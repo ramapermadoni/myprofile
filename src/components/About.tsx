@@ -12,9 +12,7 @@ export default function About() {
             turning ideas into reality through clean, efficient code.
           </p>
           <p className="text-lg leading-relaxed">
-            My journey in tech is driven by continuous learning and the excitement of exploring new frameworks, languages, 
-            and methodologies. I believe that great software comes from understanding both the technical challenges and 
-            the human needs behind every project.
+            My journey in tech is driven by continuous learning and the excitement of building products from zero to one. Apart from coding, I am also growing my own startup, Bahagia Space, where I combine technical skills with product management to solve real human problems.
           </p>
         </div>
       </div>
