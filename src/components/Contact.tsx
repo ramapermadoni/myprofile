@@ -35,8 +35,6 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // Replace with your form submission logic
-      // This example uses Formspree.io (free service)
       const response = await fetch('https://formspree.io/f/xgvzbzgp', {
         method: 'POST',
         headers: {
@@ -60,14 +58,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-ubuntu-orange mb-12 text-center">Get In Touch</h2>
+    <section id="contact" className="py-32 px-4 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom duration-700">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Get In Touch</h2>
+          <div className="h-1.5 w-24 bg-apple-pink mx-auto rounded-full"></div>
+        </div>
         
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="ubuntu-card rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+          <div className="glass-card rounded-[2rem] p-10 shadow-2xl animate-in fade-in slide-in-from-left duration-1000">
+            <h3 className="text-2xl font-bold mb-8 tracking-tight">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <input 
@@ -76,7 +77,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Your Name" 
-                  className="w-full bg-ubuntu-dark border border-ubuntu-grey/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ubuntu-orange"
+                  className="w-full glass bg-muted/30 border-none rounded-2xl px-6 py-4 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/50 transition-all"
                   required
                 />
               </div>
@@ -87,7 +88,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Your Email" 
-                  className="w-full bg-ubuntu-dark border border-ubuntu-grey/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ubuntu-orange"
+                  className="w-full glass bg-muted/30 border-none rounded-2xl px-6 py-4 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/50 transition-all"
                   required
                 />
               </div>
@@ -98,19 +99,24 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your Message" 
-                  className="w-full bg-ubuntu-dark border border-ubuntu-grey/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ubuntu-orange resize-none"
+                  className="w-full glass bg-muted/30 border-none rounded-2xl px-6 py-4 text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary/50 transition-all resize-none"
                   required
                 ></textarea>
               </div>
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-ubuntu-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors w-full disabled:opacity-50"
+                className="btn-apple-primary w-full disabled:opacity-50 shadow-xl shadow-primary/20 flex items-center justify-center gap-2"
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    Sending...
+                  </>
+                ) : 'Send Message'}
               </button>
               {submitMessage && (
-                <p className={`text-center ${submitMessage.includes('success') ? 'text-green-400' : 'text-red-400'}`}>
+                <p className={`text-center font-bold animate-in fade-in duration-300 ${submitMessage.includes('success') ? 'text-green-500' : 'text-red-500'}`}>
                   {submitMessage}
                 </p>
               )}
@@ -118,69 +124,53 @@ export default function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="ubuntu-card rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
+          <div className="glass-card rounded-[2rem] p-10 shadow-2xl animate-in fade-in slide-in-from-right duration-1000">
+            <h3 className="text-2xl font-bold mb-10 tracking-tight">Connect With Me</h3>
             
-            <div className="space-y-4 mb-8">
-              <div className="flex items-center">
-                <FontAwesomeIcon 
-                  icon={faEnvelopeSolid} 
-                  className="text-ubuntu-orange text-xl mr-4" 
-                />
-                <a href="mailto:ramaprogramming@gmail.com" className="text-ubuntu-grey hover:text-ubuntu-orange transition-colors">
+            <div className="space-y-8 mb-12">
+              <div className="flex items-center group cursor-default">
+                <div className="bg-primary/10 p-4 rounded-2xl mr-5 group-hover:bg-primary/20 transition-colors">
+                  <FontAwesomeIcon icon={faEnvelopeSolid} className="text-primary text-xl" />
+                </div>
+                <a href="mailto:ramaprogramming@gmail.com" className="text-lg text-muted-foreground hover:text-primary transition-all font-medium">
                   ramaprogramming@gmail.com
                 </a>
               </div>
               
-              <div className="flex items-center">
-                <FontAwesomeIcon 
-                  icon={faPhoneSolid} 
-                  className="text-ubuntu-orange text-xl mr-4" 
-                />
-                <a href="tel:+6282217776630" className="text-ubuntu-grey hover:text-ubuntu-orange transition-colors">
+              <div className="flex items-center group cursor-default">
+                <div className="bg-primary/10 p-4 rounded-2xl mr-5 group-hover:bg-primary/20 transition-colors">
+                  <FontAwesomeIcon icon={faPhoneSolid} className="text-primary text-xl" />
+                </div>
+                <a href="tel:+6282217776630" className="text-lg text-muted-foreground hover:text-primary transition-all font-medium">
                   +62 822 1777 6630
                 </a>
               </div>
               
-              <div className="flex items-center">
-                <FontAwesomeIcon 
-                  icon={faLocationDotSolid} 
-                  className="text-ubuntu-orange text-xl mr-4" 
-                />
-                <span className="text-ubuntu-grey">Bandung, Indonesia</span>
+              <div className="flex items-center group cursor-default">
+                <div className="bg-primary/10 p-4 rounded-2xl mr-5 group-hover:bg-primary/20 transition-colors">
+                  <FontAwesomeIcon icon={faLocationDotSolid} className="text-primary text-xl" />
+                </div>
+                <span className="text-lg text-muted-foreground font-medium group-hover:text-foreground transition-colors">Bandung, Indonesia</span>
               </div>
             </div>
 
-            <div className="flex space-x-4">
-              <a 
-                href="https://github.com/ramapermadoni" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-ubuntu-purple hover:bg-purple-700 text-white p-3 rounded-lg transition-colors cursor-pointer"
-                aria-label="GitHub"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </a>
-              
-              <a 
-                href="https://linkedin.com/in/rama-permadoni-247416154" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-ubuntu-purple hover:bg-purple-700 text-white p-3 rounded-lg transition-colors cursor-pointer"
-                aria-label="LinkedIn"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-              </a>
-              
-              <a 
-                href="https://instagram.com/ramapermadoni" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-ubuntu-purple hover:bg-purple-700 text-white p-3 rounded-lg transition-colors cursor-pointer"
-                aria-label="Instagram"
-              >
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
+            <div className="flex gap-4">
+              {[
+                { icon: faGithub, url: "https://github.com/ramapermadoni", label: "GitHub" },
+                { icon: faLinkedin, url: "https://linkedin.com/in/rama-permadoni-247416154", label: "LinkedIn" },
+                { icon: faInstagram, url: "https://instagram.com/ramapermadoni", label: "Instagram" }
+              ].map((social, idx) => (
+                <a 
+                  key={idx}
+                  href={social.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="glass w-14 h-14 flex items-center justify-center rounded-2xl hover:bg-primary/10 hover:text-primary transition-all duration-300 shadow-lg hover:-translate-y-1"
+                  aria-label={social.label}
+                >
+                  <FontAwesomeIcon icon={social.icon} className="text-2xl" />
+                </a>
+              ))}
             </div>
           </div>
         </div>

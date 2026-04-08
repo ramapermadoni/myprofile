@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,19 +12,40 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Rama Permadoni – Personal Portfolio & CV",
-  description: "Selamat datang di portfolio pribadi Rama Permadoni. Temukan profil profesional, pengalaman kerja, keahlian, proyek, dan CV lengkap saya di sini.",
-  keywords: ["Rama Permadoni", "portfolio", "CV", "profil profesional", "web pribadi", "resume", "software developer", "UI/UX", "Flutter", "Next.js", "Golang"],
-  authors: [{ name: "Rama Permadoni", url: "https://ramapermadoni.vercel.app" }],
+  description:
+    "Selamat datang di portfolio pribadi Rama Permadoni. Temukan profil profesional, pengalaman kerja, keahlian, proyek, dan CV lengkap saya di sini.",
+  keywords: [
+    "Rama Permadoni",
+    "portfolio",
+    "CV",
+    "profil profesional",
+    "web pribadi",
+    "resume",
+    "software developer",
+    "UI/UX",
+    "Flutter",
+    "Next.js",
+    "Golang",
+  ],
+  authors: [
+    { name: "Rama Permadoni", url: "https://ramapermadoni.vercel.app" },
+  ],
   creator: "Rama Permadoni",
   icons: {
-    icon: '/favicon.ico', // atau '/favicon.png'
-    apple: '/favicon.png', // Untuk dark mode (opsional)
+    icon: "/favicon.ico", // atau '/favicon.png'
+    apple: "/favicon.png", // Untuk dark mode (opsional)
   },
   openGraph: {
     title: "Rama Permadoni – Personal Portfolio & CV",
-    description: "Temukan profil profesional, pengalaman kerja, keahlian, proyek, dan CV lengkap Rama Permadoni.",
+    description:
+      "Temukan profil profesional, pengalaman kerja, keahlian, proyek, dan CV lengkap Rama Permadoni.",
     url: "https://ramapermadoni.vercel.app",
     siteName: "Rama Permadoni Portfolio",
     images: [
@@ -48,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ubuntu-bg text-ubuntu-grey antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} font-sans apple-bg antialiased`}
       >
         {children}
       </body>

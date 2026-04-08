@@ -1,84 +1,82 @@
 'use client';
 
-import { FontAwesomeIcon } from "@/components/FontAwesomeProviders";
-import { 
-  faPhp,
-  
-  faReact,
-  faCss3Alt,
-  faBootstrap,
-  faGoogle,
-  faGolang,
-  faDocker
-} from "@fortawesome/free-brands-svg-icons";
-import { faGears } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 export default function Skills() {
   const skills = [
     {
-      icon: <FontAwesomeIcon icon={faPhp} className="w-10 h-10 text-ubuntu-orange mb-3 text-4xl" />,
+      icon: "https://cdn.simpleicons.org/php/777BB4",
       name: "PHP",
       description: "CI4, Laravel"
     },
     {
-      icon: (
-        <svg className="svg-inline--fa fa-database w-10 h-10 text-ubuntu-orange mb-3 text-4xl" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="database" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path fill="currentColor" d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"></path>
-        </svg>
-      ),
+      icon: "https://cdn.simpleicons.org/mysql/4479A1",
       name: "MySQL"
     },
     {
-      
-      icon: (
-        <svg className="svg-inline--fa fa-database w-10 h-10 text-ubuntu-orange mb-3 text-4xl" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="database" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-          <path fill="currentColor" d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"></path>
-        </svg>
-      ),
+      icon: "https://cdn.simpleicons.org/postgresql/4169E1",
       name: "PostgreSQL"
     },
     {
-      icon: <FontAwesomeIcon icon={faReact} className="w-10 h-10 text-ubuntu-orange mb-3 text-4xl" />,
+      icon: "https://cdn.simpleicons.org/nextdotjs/000000",
       name: "Next.js"
     },
     {
-      icon: <FontAwesomeIcon icon={faCss3Alt} className="w-10 h-10 text-ubuntu-orange mb-3 text-4xl" />,
+      icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
       name: "Tailwind"
     },
     {
-      icon: <FontAwesomeIcon icon={faBootstrap} className="w-10 h-10 text-ubuntu-orange mb-3 text-4xl" />,
+      icon: "https://cdn.simpleicons.org/bootstrap/7952B3",
       name: "Bootstrap"
     },
     {
-      icon: <FontAwesomeIcon icon={faGears} className="w-10 h-10 text-ubuntu-orange mb-3 text-4xl" />,
+      // Frappe logo is not in simpleicons, using a placeholder or searching for a direct link
+      icon: "https://raw.githubusercontent.com/frappe/frappe/develop/frappe/public/images/frappe-framework-logo.png",
       name: "Frappe"
     },
     {
-      icon: <FontAwesomeIcon icon={faGoogle} className="w-10 h-10 text-ubuntu-orange mb-3 text-4xl" />,
+      icon: "https://cdn.simpleicons.org/flutter/02569B",
       name: "Flutter",
       description: "GetX"
     },
     {
-      icon: <FontAwesomeIcon icon={faGolang} className="w-10 h-10 text-ubuntu-orange mb-3 text-4xl" />,
+      icon: "https://cdn.simpleicons.org/go/00ADD8",
       name: "Golang"
     },
     {
-      icon: <FontAwesomeIcon icon={faDocker} className="w-10 h-10 text-ubuntu-orange mb-3 text-4xl" />,
+      icon: "https://cdn.simpleicons.org/docker/2496ED",
       name: "Docker"
     }
   ];
 
   return (
-    <section id="skills" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-ubuntu-orange mb-12 text-center">Tech Stack</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+    <section id="skills" className="py-32 px-4 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom duration-700">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Tech Stack</h2>
+          <div className="h-1.5 w-24 bg-apple-pink mx-auto rounded-full"></div>
+        </div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {skills.map((skill, index) => (
-            <div key={index} className="ubuntu-card rounded-xl p-6 text-center hover-lift">
-              {skill.icon}
-              <p className="font-semibold">{skill.name}</p>
+            <div 
+              key={index} 
+              className="glass-card p-8 text-center animate-in fade-in zoom-in duration-700 group cursor-default h-full flex flex-col items-center justify-center"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="w-16 h-16 relative mb-6 transform group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                <Image 
+                  src={skill.icon}
+                  alt={skill.name}
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                  unoptimized // CDN images often need this if not configured in next.config.js
+                />
+              </div>
+              <p className="font-bold text-lg mb-1">{skill.name}</p>
               {skill.description && (
-                <p className="text-sm text-ubuntu-grey">{skill.description}</p>
+                <p className="text-sm text-muted-foreground font-medium">{skill.description}</p>
               )}
             </div>
           ))}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import useSmoothScroll from '@/hooks/useSmoothScroll';
 
@@ -11,6 +11,8 @@ interface NavItem {
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const navItems: NavItem[] = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -23,24 +25,36 @@ export default function Navbar() {
 
   useSmoothScroll();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav id="navbar" className="fixed top-0 w-full bg-ubuntu-dark/95 backdrop-blur-sm border-b border-ubuntu-card z-50">
+    <nav 
+      id="navbar" 
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-nav py-2 shadow-sm' : 'bg-transparent py-4'}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="#home" className="text-ubuntu-orange font-bold text-xl">
+          <Link href="#home" className="text-apple-gradient font-bold text-2xl tracking-tight">
             Rama Permadoni
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 font-medium">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="hover:text-ubuntu-orange transition-colors cursor-pointer"
+                className="text-foreground/80 hover:text-primary transition-all duration-300 cursor-pointer relative group"
               >
                 {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </div>
@@ -48,29 +62,35 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-ubuntu-grey"
+            className="md:hidden text-foreground p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors"
           >
-            <svg className="svg-inline--fa fa-bars w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              )}
             </svg>
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4">
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96 opacity-100 py-4' : 'max-h-0 opacity-0'}`}
+        >
+          <div className="glass rounded-2xl p-4 space-y-2 mb-4 shadow-xl">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block hover:text-ubuntu-orange transition-colors cursor-pointer"
+                className="block px-4 py-2 rounded-xl text-foreground/80 hover:bg-primary/10 hover:text-primary transition-all font-medium"
               >
                 {item.name}
               </Link>
             ))}
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
