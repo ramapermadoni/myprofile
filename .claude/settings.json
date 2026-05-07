@@ -3,7 +3,18 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(npm install *)",
-      "Bash(npx --no-install tsc --noEmit -p /Users/ramapermadoni/mine/myprofile/tsconfig.json)"
+      "Bash(npx --no-install tsc --noEmit -p /Users/ramapermadoni/mine/myprofile/tsconfig.json)",
+      "Bash(git -C /Users/ramapermadoni/mine/myprofile status)",
+      "Bash(git -C /Users/ramapermadoni/mine/myprofile branch -avv)",
+      "Bash(git -C /Users/ramapermadoni/mine/myprofile log --oneline --graph --all -20)",
+      "Bash(git -C /Users/ramapermadoni/mine/myprofile checkout main)",
+      "Bash(git -C /Users/ramapermadoni/mine/myprofile merge v3 --ff-only)",
+      "Bash(git -C /Users/ramapermadoni/mine/myprofile show v3:.claude/settings.json)",
+      "Bash(cp /Users/ramapermadoni/mine/myprofile/.claude/settings.json /tmp/myprofile-claude-settings-backup.json)",
+      "Bash(rm /Users/ramapermadoni/mine/myprofile/.claude/settings.json)",
+      "Bash(cp /tmp/myprofile-claude-settings-backup.json /Users/ramapermadoni/mine/myprofile/.claude/settings.json)",
+      "Bash(git -C /Users/ramapermadoni/mine/myprofile push origin main)",
+      "Bash(git -C /Users/ramapermadoni/mine/myprofile log --oneline --graph --all -5)"
     ]
   }
 }
