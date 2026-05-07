@@ -1,6 +1,8 @@
 'use client';
 
 import Image from "next/image";
+import { FontAwesomeIcon } from "@/components/FontAwesomeProviders";
+import { faGooglePlay } from "@fortawesome/free-brands-svg-icons";
 
 export default function Projects() {
   const projects = [
@@ -33,34 +35,43 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-ubuntu-orange mb-12 text-center">Featured Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="text-center mb-12">
+          <span className="inline-block glass-pill-neutral rounded-full px-3 py-1 text-xs tracking-[0.2em] uppercase mb-4">
+            Selected Work
+          </span>
+          <h2 className="text-4xl font-bold text-ubuntu-orange tracking-tight">Featured Projects</h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
           {projects.map((project, index) => (
-            <div key={index} className="ubuntu-card rounded-2xl overflow-hidden shadow-xl hover-lift">
-              <Image
-                className="w-full h-48 object-cover"
-                src={project.image}
-                alt={project.alt}
-                width={400}
-                height={192}
-                loading="lazy"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-ubuntu-grey mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+            <div key={index} className="ubuntu-card rounded-3xl overflow-hidden shadow-xl hover-lift flex flex-col">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  className="w-full h-full object-cover"
+                  src={project.image}
+                  alt={project.alt}
+                  width={400}
+                  height={192}
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="p-6 relative z-10 flex flex-col flex-1">
+                <h3 className="text-xl font-bold text-white mb-2 tracking-tight">{project.title}</h3>
+                <p className="text-ubuntu-grey mb-4 flex-1">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-5">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="bg-ubuntu-orange/20 text-ubuntu-orange px-2 py-1 rounded text-sm">
+                    <span key={tagIndex} className="glass-pill px-2.5 py-1 rounded-full text-xs">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <a 
-                  href={project.playStoreUrl} 
-                  target="_blank" 
+                <a
+                  href={project.playStoreUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-ubuntu-purple hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-ubuntu-purple hover:bg-purple-700 text-white px-4 py-2.5 rounded-xl transition-all font-medium"
                 >
+                  <FontAwesomeIcon icon={faGooglePlay} className="w-4 h-4" />
                   View on Play Store
                 </a>
               </div>

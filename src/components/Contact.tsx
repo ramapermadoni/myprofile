@@ -62,50 +62,55 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-ubuntu-orange mb-12 text-center">Get In Touch</h2>
-        
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="text-center mb-12">
+          <span className="inline-block glass-pill-neutral rounded-full px-3 py-1 text-xs tracking-[0.2em] uppercase mb-4">
+            Reach Out
+          </span>
+          <h2 className="text-4xl font-bold text-ubuntu-orange tracking-tight">Get In Touch</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <div className="ubuntu-card rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="ubuntu-card rounded-3xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
               <div>
-                <input 
+                <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Your Name" 
-                  className="w-full bg-ubuntu-dark border border-ubuntu-grey/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ubuntu-orange"
+                  placeholder="Your Name"
+                  className="glass-input w-full rounded-xl px-4 py-3"
                   required
                 />
               </div>
               <div>
-                <input 
+                <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Your Email" 
-                  className="w-full bg-ubuntu-dark border border-ubuntu-grey/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ubuntu-orange"
+                  placeholder="Your Email"
+                  className="glass-input w-full rounded-xl px-4 py-3"
                   required
                 />
               </div>
               <div>
-                <textarea 
+                <textarea
                   rows={5}
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Your Message" 
-                  className="w-full bg-ubuntu-dark border border-ubuntu-grey/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-ubuntu-orange resize-none"
+                  placeholder="Your Message"
+                  className="glass-input w-full rounded-xl px-4 py-3 resize-none"
                   required
                 ></textarea>
               </div>
-              <button 
+              <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-ubuntu-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors w-full disabled:opacity-50"
+                className="bg-ubuntu-orange hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-semibold transition-all w-full disabled:opacity-50 hover-lift"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
@@ -118,65 +123,71 @@ export default function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="ubuntu-card rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
-            
-            <div className="space-y-4 mb-8">
+          <div className="ubuntu-card rounded-3xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Connect With Me</h3>
+
+            <div className="space-y-4 mb-8 relative z-10">
               <div className="flex items-center">
-                <FontAwesomeIcon 
-                  icon={faEnvelopeSolid} 
-                  className="text-ubuntu-orange text-xl mr-4" 
-                />
+                <div className="glass-icon-tile rounded-xl p-2.5 mr-4 inline-flex items-center justify-center w-10 h-10">
+                  <FontAwesomeIcon
+                    icon={faEnvelopeSolid}
+                    className="text-ubuntu-orange"
+                  />
+                </div>
                 <a href="mailto:ramaprogramming@gmail.com" className="text-ubuntu-grey hover:text-ubuntu-orange transition-colors">
                   ramaprogramming@gmail.com
                 </a>
               </div>
-              
+
               <div className="flex items-center">
-                <FontAwesomeIcon 
-                  icon={faPhoneSolid} 
-                  className="text-ubuntu-orange text-xl mr-4" 
-                />
+                <div className="glass-icon-tile rounded-xl p-2.5 mr-4 inline-flex items-center justify-center w-10 h-10">
+                  <FontAwesomeIcon
+                    icon={faPhoneSolid}
+                    className="text-ubuntu-orange"
+                  />
+                </div>
                 <a href="tel:+6282217776630" className="text-ubuntu-grey hover:text-ubuntu-orange transition-colors">
                   +62 822 1777 6630
                 </a>
               </div>
-              
+
               <div className="flex items-center">
-                <FontAwesomeIcon 
-                  icon={faLocationDotSolid} 
-                  className="text-ubuntu-orange text-xl mr-4" 
-                />
+                <div className="glass-icon-tile rounded-xl p-2.5 mr-4 inline-flex items-center justify-center w-10 h-10">
+                  <FontAwesomeIcon
+                    icon={faLocationDotSolid}
+                    className="text-ubuntu-orange"
+                  />
+                </div>
                 <span className="text-ubuntu-grey">Bandung, Indonesia</span>
               </div>
             </div>
 
-            <div className="flex space-x-4">
-              <a 
-                href="https://github.com/ramapermadoni" 
-                target="_blank" 
+            <div className="flex space-x-3 relative z-10">
+              <a
+                href="https://github.com/ramapermadoni"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="bg-ubuntu-purple hover:bg-purple-700 text-white p-3 rounded-lg transition-colors cursor-pointer"
+                className="bg-ubuntu-purple hover:bg-purple-700 text-white w-11 h-11 rounded-xl transition-all cursor-pointer inline-flex items-center justify-center"
                 aria-label="GitHub"
               >
                 <FontAwesomeIcon icon={faGithub} />
               </a>
-              
-              <a 
-                href="https://linkedin.com/in/rama-permadoni-247416154" 
-                target="_blank" 
+
+              <a
+                href="https://linkedin.com/in/rama-permadoni-247416154"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="bg-ubuntu-purple hover:bg-purple-700 text-white p-3 rounded-lg transition-colors cursor-pointer"
+                className="bg-ubuntu-purple hover:bg-purple-700 text-white w-11 h-11 rounded-xl transition-all cursor-pointer inline-flex items-center justify-center"
                 aria-label="LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
-              
-              <a 
-                href="https://instagram.com/ramapermadoni" 
-                target="_blank" 
+
+              <a
+                href="https://instagram.com/ramapermadoni"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="bg-ubuntu-purple hover:bg-purple-700 text-white p-3 rounded-lg transition-colors cursor-pointer"
+                className="bg-ubuntu-purple hover:bg-purple-700 text-white w-11 h-11 rounded-xl transition-all cursor-pointer inline-flex items-center justify-center"
                 aria-label="Instagram"
               >
                 <FontAwesomeIcon icon={faInstagram} />

@@ -119,23 +119,30 @@ export default function Experience() {
   return (
     <section id="experience" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-ubuntu-orange mb-12 text-center">Education & Work Experience</h2>
-        
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="text-center mb-12">
+          <span className="inline-block glass-pill-neutral rounded-full px-3 py-1 text-xs tracking-[0.2em] uppercase mb-4">
+            Timeline
+          </span>
+          <h2 className="text-4xl font-bold text-ubuntu-orange tracking-tight">Education &amp; Work Experience</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Education Section */}
-          <div className="ubuntu-card rounded-2xl p-8 shadow-xl">
-            <div className="flex items-center mb-8">
-              <FontAwesomeIcon 
-                icon={faGraduationCap} 
-                className="text-ubuntu-orange text-3xl mr-4" 
-              />
-              <h3 className="text-2xl font-bold text-white">Education & Beginnings</h3>
+          <div className="ubuntu-card rounded-3xl p-8 shadow-xl">
+            <div className="flex items-center mb-8 relative z-10">
+              <div className="glass-icon-tile rounded-2xl p-3 mr-4 inline-flex items-center justify-center">
+                <FontAwesomeIcon
+                  icon={faGraduationCap}
+                  className="text-ubuntu-orange text-2xl"
+                />
+              </div>
+              <h3 className="text-2xl font-bold text-white">Education &amp; Beginnings</h3>
             </div>
-            
-            <div className="space-y-8">
+
+            <div className="space-y-8 relative z-10">
               {education.map((item) => (
-                <div key={`edu-${item.id}`} className="relative pl-8 border-l-2 border-ubuntu-orange/50">
-                  <div className="absolute -left-2 top-0 w-4 h-4 bg-ubuntu-orange rounded-full"></div>
+                <div key={`edu-${item.id}`} className="relative pl-8 border-l-2 border-ubuntu-orange/40">
+                  <div className="absolute -left-[9px] top-1 w-4 h-4 bg-ubuntu-orange rounded-full ring-4 ring-ubuntu-orange/20"></div>
                   <div className="flex items-start">
                     {item.icon && (
                       <span className="text-ubuntu-orange mr-3 mt-1">
@@ -150,7 +157,7 @@ export default function Experience() {
                       {item.tags && (
                         <div className="flex flex-wrap gap-2">
                           {item.tags.map((tag, i) => (
-                            <span key={i} className="bg-ubuntu-orange/20 text-ubuntu-orange px-3 py-1 rounded-full text-sm">
+                            <span key={i} className="glass-pill px-3 py-1 rounded-full text-xs">
                               {tag}
                             </span>
                           ))}
@@ -163,19 +170,21 @@ export default function Experience() {
             </div>
           </div>
           {/* Work Experience Section */}
-          <div className="ubuntu-card rounded-2xl p-8 shadow-xl">
-            <div className="flex items-center mb-8">
-              <FontAwesomeIcon 
-                icon={faBriefcase} 
-                className="text-ubuntu-orange text-3xl mr-4" 
-              />
+          <div className="ubuntu-card rounded-3xl p-8 shadow-xl">
+            <div className="flex items-center mb-8 relative z-10">
+              <div className="glass-icon-tile rounded-2xl p-3 mr-4 inline-flex items-center justify-center">
+                <FontAwesomeIcon
+                  icon={faBriefcase}
+                  className="text-ubuntu-orange text-2xl"
+                />
+              </div>
               <h3 className="text-2xl font-bold text-white">Professional Experience</h3>
             </div>
-            
-            <div className="space-y-8">
+
+            <div className="space-y-8 relative z-10">
               {workExperience.map((item) => (
-                <div key={`work-${item.id}`} className="relative pl-8 border-l-2 border-ubuntu-orange/50">
-                  <div className="absolute -left-2 top-0 w-4 h-4 bg-ubuntu-orange rounded-full"></div>
+                <div key={`work-${item.id}`} className="relative pl-8 border-l-2 border-ubuntu-orange/40">
+                  <div className="absolute -left-[9px] top-1 w-4 h-4 bg-ubuntu-orange rounded-full ring-4 ring-ubuntu-orange/20"></div>
                   <h4 className="text-xl font-bold text-white">{item.title}</h4>
                   <p className="text-ubuntu-orange font-medium">{item.institution}</p>
                   <p className="text-ubuntu-grey text-sm mb-2">{item.period}</p>
@@ -183,7 +192,7 @@ export default function Experience() {
                   {item.tags && (
                     <div className="flex flex-wrap gap-2">
                       {item.tags.map((tag, i) => (
-                        <span key={i} className="bg-ubuntu-orange/20 text-ubuntu-orange px-3 py-1 rounded-full text-sm">
+                        <span key={i} className="glass-pill px-3 py-1 rounded-full text-xs">
                           {tag}
                         </span>
                       ))}

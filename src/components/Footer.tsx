@@ -21,18 +21,19 @@ export default function Footer() {
   ];
 
   return (
-    <footer id="footer" className="py-12 px-4 border-t border-ubuntu-card">
+    <footer id="footer" className="py-12 px-4 mt-10">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-ubuntu-grey">© {new Date().getFullYear()} Rama Permadoni. All rights reserved.</p>
+        <div className="glass-divider mb-10" />
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <p className="text-ubuntu-grey text-sm">© {new Date().getFullYear()} Rama Permadoni. All rights reserved.</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 w-full md:w-auto">
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 w-full md:w-auto">
             {navItems.map((item, index) => (
-              <a 
+              <a
                 key={index}
                 href={item.href}
-                className="text-ubuntu-grey hover:text-ubuntu-orange transition-colors cursor-pointer"
+                className="text-ubuntu-grey hover:text-ubuntu-orange transition-colors cursor-pointer text-sm"
               >
                 {item.name}
               </a>
