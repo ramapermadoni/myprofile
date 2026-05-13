@@ -605,3 +605,43 @@ button {
 .text-gray-500 {
   color: var(--text-subtle);
 }
+
+/* =====================================================================
+   Print stylesheet — for /print page (Cmd/Ctrl + P → Save as PDF)
+   ===================================================================== */
+@page {
+  size: A4;
+  margin: 10mm 0 5mm 0;
+}
+
+@media print {
+  /* Hide everything outside the print document */
+  body > *:not(.print-document) {
+    display: none !important;
+  }
+  /* And screen-only toolbar inside the print page */
+  .no-print {
+    display: none !important;
+  }
+  /* Reset page colors */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .print-document {
+    position: static !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+  }
+  .print-sheet {
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+  /* Force colors to print (orange accent, etc.) */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
