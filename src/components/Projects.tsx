@@ -30,7 +30,7 @@ const projects: Project[] = [
     title: "DT Peduli Official",
     description:
       "Official charity & donation mobile app — campaigns, payment gateway integration, and donor experience.",
-    image: `${IMG}/play.google.com_store_apps_details_id=com.dtpeduli.official(HD).png`,
+    image: `${IMG}/dt-peduli-official.webp`,
     categories: ["mobile"],
     tags: ["Flutter", "Payment Gateway", "REST API"],
     primary: {
@@ -43,7 +43,7 @@ const projects: Project[] = [
     title: "DT Peduli Qurban",
     description:
       "Mobile app for Qurban (sacrifice) donation management with end-to-end payment & tracking.",
-    image: `${IMG}/play.google.com_store_apps_details_id=com.dtpeduli.qurban(HD).png`,
+    image: `${IMG}/dt-peduli-qurban.webp`,
     categories: ["mobile"],
     tags: ["Flutter", "REST API"],
     primary: {
@@ -56,7 +56,7 @@ const projects: Project[] = [
     title: "DT Peduli Mitra",
     description:
       "Companion app for zakat-collection partners — streamlined workflows for field collectors and partner organizations.",
-    image: `${IMG}/play.google.com_store_apps_details_id=org.dtpeduli.mitra(HD).png`,
+    image: `${IMG}/dt-peduli-mitra.webp`,
     categories: ["mobile"],
     tags: ["Flutter", "REST API"],
     primary: {
@@ -69,7 +69,7 @@ const projects: Project[] = [
     title: "NXSYSPRO POS",
     description:
       "Point-of-sale mobile app for retail outlets with reliable transactions and back-office sync.",
-    image: `${IMG}/play.google.com_store_apps_details_id=com.nxsyspro.nxsyspos(hd).png`,
+    image: `${IMG}/nxsyspro-pos.webp`,
     categories: ["mobile"],
     tags: ["Flutter", "REST API", "POS"],
     primary: {
@@ -82,7 +82,7 @@ const projects: Project[] = [
     title: "TEI Operation",
     description:
       "Transhipment operations app for coal-carrying vessels — tracks ship-to-ship loading, transfer, and logistics in the field.",
-    image: `${IMG}/play.google.com_store_apps_details_id=com.tei.operation(hd).png`,
+    image: `${IMG}/tei-operation.webp`,
     categories: ["mobile"],
     tags: ["Flutter", "Logistics", "REST API"],
     primary: {
@@ -95,7 +95,7 @@ const projects: Project[] = [
     title: "Kopontren DT",
     description:
       "Cooperative member portal — view savings balance, withdrawals, and transaction history across the cooperative's businesses.",
-    image: `${IMG}/play.google.com_store_apps_details_id=org.kopontrendt.app(hd).png`,
+    image: `${IMG}/kopontren-dt.webp`,
     categories: ["mobile"],
     tags: ["Flutter", "REST API"],
     primary: {
@@ -108,7 +108,7 @@ const projects: Project[] = [
     title: "NXSYSPRO HRDT",
     description:
       "Human Resources ecosystem — web app, admin dashboard, and cross-platform mobile app for end-to-end employee operations.",
-    image: `${IMG}/hrdt.nxsyspro.com_(hd).png`,
+    image: `${IMG}/nxsyspro-hrdt-web.webp`,
     categories: ["web", "mobile"],
     tags: ["Flutter", "CodeIgniter 4", "MySQL", "REST API"],
     primary: { url: "https://hrdt.nxsyspro.com", label: "Visit Website", kind: "web" },
@@ -122,7 +122,7 @@ const projects: Project[] = [
     title: "Digital Cabinet",
     description:
       "Maintained and extended this corporate web platform — building and shipping new features over time.",
-    image: `${IMG}/www.digitalcabinet.co.id_(hd).png`,
+    image: `${IMG}/digital-cabinet.webp`,
     categories: ["web"],
     tags: ["PHP", "MySQL", "JavaScript"],
     primary: { url: "https://www.digitalcabinet.co.id", label: "Visit", kind: "web" },
@@ -131,7 +131,7 @@ const projects: Project[] = [
     title: "Bahagia Space",
     description:
       "A 'Library of Feelings' — wedding invitation platform evolving into a mental well-being ecosystem with Story Room, Wall of Gratitude, and anxiety-relief resources.",
-    image: `${IMG}/bahagia.space_(hd).png`,
+    image: `${IMG}/bahagia-space.webp`,
     categories: ["web"],
     tags: ["Next.js", "PostgreSQL", "Tailwind", "Vercel"],
     primary: { url: "https://bahagia.space", label: "Visit Platform", kind: "web" },
@@ -140,7 +140,7 @@ const projects: Project[] = [
     title: "Kaspace",
     description:
       "Cashier (POS) system for Indonesian UMKM — Shift Management, real-time inventory, and accurate sales reports in a single app.",
-    image: `${IMG}/kaspace.online_(hd).png`,
+    image: `${IMG}/kaspace.webp`,
     categories: ["web"],
     tags: ["Next.js", "Tailwind", "POS"],
     primary: { url: "https://kaspace.online", label: "Visit", kind: "web" },
@@ -149,7 +149,7 @@ const projects: Project[] = [
     title: "Waspace",
     description:
       "Enterprise-grade WhatsApp Gateway for developers — high-performance API, multi-device scale, and cosmic reliability.",
-    image: `${IMG}/waspace.bahagia.space_(hd).png`,
+    image: `${IMG}/waspace.webp`,
     categories: ["web"],
     tags: ["Next.js", "WhatsApp API", "Tailwind"],
     primary: { url: "https://waspace.bahagia.space", label: "Visit", kind: "web" },
@@ -158,7 +158,7 @@ const projects: Project[] = [
     title: "Joyspace",
     description:
       "Media Sortir Pro — sort your photo & video backlog with a gamepad. Plug in your controller, sit back, and triage media in a flash.",
-    image: `${IMG}/joyspace.bahagia.space_(hd).png`,
+    image: `${IMG}/joyspace.webp`,
     categories: ["web"],
     tags: ["Next.js", "Gamepad API", "Tailwind"],
     primary: { url: "https://joyspace.bahagia.space", label: "Visit", kind: "web" },

@@ -17,7 +17,14 @@
       "Bash(git -C /Users/ramapermadoni/mine/myprofile log --oneline --graph --all -5)",
       "WebFetch(domain:joyspace.bahagia.space)",
       "WebFetch(domain:waspace.bahagia.space)",
-      "WebFetch(domain:kaspace.online)"
+      "WebFetch(domain:kaspace.online)",
+      "Bash(node /tmp/convert-projects-images.mjs)",
+      "Bash(node .convert-images.mjs)"
+    ],
+    "additionalDirectories": [
+      "/tmp",
+      "/private/tmp",
+      "/Users/ramapermadoni/mine/myprofile"
     ]
   }
 }
