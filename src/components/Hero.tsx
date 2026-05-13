@@ -3,19 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@/components/FontAwesomeProviders";
-import { faDownload, faHandshake, faCode } from "@fortawesome/free-solid-svg-icons";
+import { faFileLines, faHandshake, faCode } from "@fortawesome/free-solid-svg-icons";
 
 export default function Hero() {
-  const handleDownloadCV = () => {
-    // Create a temporary anchor tag
-    const link = document.createElement('a');
-    link.href = '/CV_Rama_Permadoni.pdf'; // Path to your CV in public folder
-    link.download = 'Rama_Permadoni_CV.pdf'; // Suggested filename for download
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <section id="hero" className="min-h-[800px] flex items-center justify-center px-4 mt-16 py-20">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -33,13 +23,13 @@ export default function Hero() {
             Let&apos;s build something amazing together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <button
-              onClick={handleDownloadCV}
+            <Link
+              href="/print"
               className="bg-ubuntu-orange hover:bg-orange-600 text-white px-8 py-3 rounded-2xl font-semibold transition-all hover-lift inline-flex items-center justify-center"
             >
-              <FontAwesomeIcon icon={faDownload} className="w-4 h-4 mr-2" />
-              Download CV
-            </button>
+              <FontAwesomeIcon icon={faFileLines} className="w-4 h-4 mr-2" />
+              View CV
+            </Link>
             <Link
               href="#contact"
               className="bg-ubuntu-purple hover:bg-purple-700 text-white px-8 py-3 rounded-2xl font-semibold transition-all hover-lift text-center inline-flex items-center justify-center"
