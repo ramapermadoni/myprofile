@@ -3,14 +3,14 @@
 import Image from "next/image";
 import { Globe, Smartphone, Lock } from "lucide-react";
 import { FontAwesomeIcon } from "@/components/FontAwesomeProviders";
-import { faGooglePlay } from "@fortawesome/free-brands-svg-icons";
+import { faApple, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
 
 type Category = "web" | "mobile";
 
 interface ProjectLink {
   url: string;
   label: string;
-  kind: "web" | "mobile";
+  kind: "web" | "mobile" | "ios";
 }
 
 interface Project {
@@ -20,12 +20,32 @@ interface Project {
   categories: Category[];
   tags: string[];
   primary: ProjectLink;
-  secondary?: ProjectLink;
+  secondary?: ProjectLink[];
 }
 
 const IMG = "/assets/images/featured-projects";
 
 const projects: Project[] = [
+  {
+    title: "Simpul Kebaikan",
+    description:
+      "Volunteering & social-good super app — discover volunteer opportunities nearby, join events, offer your skills, donate, and send emergency requests.",
+    image: `${IMG}/simpul-kebaikan.webp`,
+    categories: ["mobile"],
+    tags: ["Flutter", "REST API", "Geolocation"],
+    primary: {
+      url: "https://play.google.com/store/apps/details?id=org.siapguna.kerelawanan&hl=id",
+      label: "Play Store",
+      kind: "mobile",
+    },
+    secondary: [
+      {
+        url: "https://apps.apple.com/id/app/simpul-kebaikan/id6794994957",
+        label: "App Store",
+        kind: "ios",
+      },
+    ],
+  },
   {
     title: "DT Peduli Official",
     description:
@@ -103,6 +123,13 @@ const projects: Project[] = [
       label: "Play Store",
       kind: "mobile",
     },
+    secondary: [
+      {
+        url: "https://apps.apple.com/id/app/kopontren-dt/id6763991943",
+        label: "App Store",
+        kind: "ios",
+      },
+    ],
   },
   {
     title: "NXSYSPRO HRDT",
@@ -112,11 +139,18 @@ const projects: Project[] = [
     categories: ["web", "mobile"],
     tags: ["Flutter", "CodeIgniter 4", "MySQL", "REST API"],
     primary: { url: "https://hrdt.nxsyspro.com", label: "Visit Website", kind: "web" },
-    secondary: {
-      url: "https://play.google.com/store/apps/details?id=com.nxsyspro.hrd&hl=id",
-      label: "Play Store",
-      kind: "mobile",
-    },
+    secondary: [
+      {
+        url: "https://play.google.com/store/apps/details?id=com.nxsyspro.hrd&hl=id",
+        label: "Play Store",
+        kind: "mobile",
+      },
+      {
+        url: "https://apps.apple.com/id/app/hrdt/id6753696558",
+        label: "App Store",
+        kind: "ios",
+      },
+    ],
   },
   {
     title: "Digital Cabinet",
@@ -177,7 +211,6 @@ function CategoryBadge({ category }: { category: Category }) {
 }
 
 function LinkButton({ link, variant = "primary" }: { link: ProjectLink; variant?: "primary" | "secondary" }) {
-  const isMobile = link.kind === "mobile";
   const base =
     "inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl transition-all font-medium text-sm flex-1";
   const styles =
@@ -191,8 +224,10 @@ function LinkButton({ link, variant = "primary" }: { link: ProjectLink; variant?
       rel="noopener noreferrer"
       className={`${base} ${styles}`}
     >
-      {isMobile ? (
+      {link.kind === "mobile" ? (
         <FontAwesomeIcon icon={faGooglePlay} className="w-4 h-4" />
+      ) : link.kind === "ios" ? (
+        <FontAwesomeIcon icon={faApple} className="w-4 h-4" />
       ) : (
         <Globe className="w-4 h-4" />
       )}
@@ -244,7 +279,9 @@ export default function Projects() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <LinkButton link={p.primary} />
-                  {p.secondary && <LinkButton link={p.secondary} variant="secondary" />}
+                  {p.secondary?.map((link) => (
+                    <LinkButton key={link.url} link={link} variant="secondary" />
+                  ))}
                 </div>
               </div>
             </article>
