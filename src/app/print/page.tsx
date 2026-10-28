@@ -23,8 +23,9 @@ const workExperience = [
   {
     title: 'Web & Mobile Developer',
     company: 'DT Peduli',
-    period: 'Jun 2023 — Present',
-    description: 'Web and mobile applications for social platforms with PHP and Flutter.',
+    period: 'Jun 2023 — Present (Seasonal)',
+    description:
+      'Web and mobile applications for social platforms with PHP and Flutter, on a seasonal, project-by-project basis.',
     tags: ['Flutter', 'PHP', 'CodeIgniter', 'REST APIs'],
   },
   {

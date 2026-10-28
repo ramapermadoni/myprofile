@@ -59,8 +59,8 @@ export default function Experience() {
       id: 2,
       title: "Web & Mobile Developer",
       institution: "DT Peduli",
-      period: "Jun 2023 - Present",
-      description: "Building web and mobile applications for social platforms with PHP and Flutter.",
+      period: "Jun 2023 - Present (Seasonal)",
+      description: "Building web and mobile applications for social platforms with PHP and Flutter, engaged on a seasonal, project-by-project basis.",
       tags: ["Flutter", "PHP", "CodeIgniter", "REST APIs"]
     },
     {
