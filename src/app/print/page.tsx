@@ -234,7 +234,7 @@ export default function PrintPage() {
 
       {/* The sheet */}
       <article className="print-sheet max-w-[820px] mx-auto my-6 bg-white shadow-2xl print:shadow-none print:my-0 print:max-w-none">
-        <div className="px-12 py-10 print:px-10 print:py-8">
+        <div className="px-12 py-10 print:px-10 print:py-4">
           {/* Header */}
           <header className="flex items-start gap-6 pb-6 border-b border-black/10">
             <div className="flex-1">
@@ -335,7 +335,7 @@ export default function PrintPage() {
 
           {/* Featured Projects */}
           <Section title="Featured Projects">
-            <div className="grid grid-cols-2 gap-x-6 gap-y-2.5">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 print:gap-y-1.5">
               {projects.map((p) => (
                 <div key={p.title} className="break-inside-avoid">
                   <div className="flex items-center gap-1.5">
@@ -361,7 +361,7 @@ export default function PrintPage() {
           </Section>
 
           {/* Footer */}
-          <footer className="mt-8 pt-4 border-t border-black/10 flex items-center justify-between text-[9.5px] text-neutral-500">
+          <footer className="mt-8 pt-4 print:mt-3 print:pt-2 break-inside-avoid border-t border-black/10 flex items-center justify-between text-[9.5px] text-neutral-500">
             <span>ramapermadoni.vercel.app</span>
             <span>Rama Permadoni · Portfolio</span>
           </footer>
@@ -373,7 +373,7 @@ export default function PrintPage() {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-5 break-inside-avoid">
+    <section className="mt-5 print:mt-3.5 break-inside-avoid">
       <h2 className="text-[10px] tracking-[0.22em] uppercase text-[#e95420] font-bold mb-2 pb-1 border-b border-[#e95420]/30">
         {title}
       </h2>
